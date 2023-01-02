@@ -1,0 +1,10 @@
+:root {
+    --primary: #4CC986;
+    --secondary: #E5E5E5;
+    --secondaryBorder: #36B972;
+}
+
+body {
+    font-family: 'Exo';
+    
+}

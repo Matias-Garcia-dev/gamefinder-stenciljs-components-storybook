@@ -4,11 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
-
+    <link href='https://fonts.googleapis.com/css?family=Exo' rel='stylesheet'>
     <script type="module" src="/build/gamefinder-stenciljs-components-storybook.esm.js"></script>
     <script nomodule src="/build/gamefinder-stenciljs-components-storybook.js"></script>
   </head>
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <button-gamefinder>Game Finder</button-gamefinder>
+    <button-gamefinder disabled=true>Game Finder</button-gamefinder>
+    <button-gamefinder size="small">Game Finder</button-gamefinder>
+    <button-gamefinder size="small" variant="secondary" >Game Finder</button-gamefinder>
+    <button-gamefinder size="small" variant="secondary" disabled=true >Game Finder</button-gamefinder>
   </body>
 </html>

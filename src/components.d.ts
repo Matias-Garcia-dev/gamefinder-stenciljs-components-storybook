@@ -6,6 +6,13 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface ButtonGamefinder {
+        "disabled": boolean;
+        "icon": string;
+        "onClick": () => void;
+        "size": string;
+        "variant": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -22,6 +29,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLButtonGamefinderElement extends Components.ButtonGamefinder, HTMLStencilElement {
+    }
+    var HTMLButtonGamefinderElement: {
+        prototype: HTMLButtonGamefinderElement;
+        new (): HTMLButtonGamefinderElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -29,10 +42,18 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "button-gamefinder": HTMLButtonGamefinderElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface ButtonGamefinder {
+        "disabled"?: boolean;
+        "icon"?: string;
+        "onClick"?: () => void;
+        "size"?: string;
+        "variant"?: string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +69,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "button-gamefinder": ButtonGamefinder;
         "my-component": MyComponent;
     }
 }
@@ -55,6 +77,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "button-gamefinder": LocalJSX.ButtonGamefinder & JSXBase.HTMLAttributes<HTMLButtonGamefinderElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
