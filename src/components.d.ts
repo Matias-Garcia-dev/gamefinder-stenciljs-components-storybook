@@ -13,6 +13,15 @@ export namespace Components {
         "size": string;
         "variant": string;
     }
+    interface InputGamefinder {
+        "color": string;
+        "disable": boolean;
+        "helpText": string;
+        "icon": string;
+        "label": string;
+        "placeholder": string;
+        "variant": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -35,6 +44,12 @@ declare global {
         prototype: HTMLButtonGamefinderElement;
         new (): HTMLButtonGamefinderElement;
     };
+    interface HTMLInputGamefinderElement extends Components.InputGamefinder, HTMLStencilElement {
+    }
+    var HTMLInputGamefinderElement: {
+        prototype: HTMLInputGamefinderElement;
+        new (): HTMLInputGamefinderElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -43,6 +58,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "button-gamefinder": HTMLButtonGamefinderElement;
+        "input-gamefinder": HTMLInputGamefinderElement;
         "my-component": HTMLMyComponentElement;
     }
 }
@@ -52,6 +68,15 @@ declare namespace LocalJSX {
         "icon"?: string;
         "onClick"?: () => void;
         "size"?: string;
+        "variant"?: string;
+    }
+    interface InputGamefinder {
+        "color"?: string;
+        "disable"?: boolean;
+        "helpText"?: string;
+        "icon"?: string;
+        "label"?: string;
+        "placeholder"?: string;
         "variant"?: string;
     }
     interface MyComponent {
@@ -70,6 +95,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "button-gamefinder": ButtonGamefinder;
+        "input-gamefinder": InputGamefinder;
         "my-component": MyComponent;
     }
 }
@@ -78,6 +104,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "button-gamefinder": LocalJSX.ButtonGamefinder & JSXBase.HTMLAttributes<HTMLButtonGamefinderElement>;
+            "input-gamefinder": LocalJSX.InputGamefinder & JSXBase.HTMLAttributes<HTMLInputGamefinderElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

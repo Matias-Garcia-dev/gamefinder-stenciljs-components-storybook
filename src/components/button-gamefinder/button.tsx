@@ -40,7 +40,6 @@ componentDidLoad() {
   render() {
       const camelizedVariant = this.camelize(this.variant)
       const camelizedSize = this.camelize(this.size)
-      const isDisabledClass = this.disabled ? `${camelizedVariant}Disabled` : camelizedVariant
       const hasTextClass = !this.host.innerHTML ? 'noPadding' : ''
 
       return (
