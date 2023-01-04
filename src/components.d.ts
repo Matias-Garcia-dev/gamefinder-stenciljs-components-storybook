@@ -13,15 +13,6 @@ export namespace Components {
         "size": string;
         "variant": string;
     }
-    interface InputGamefinder {
-        "color": string;
-        "disable": boolean;
-        "helpText": string;
-        "icon": string;
-        "label": string;
-        "placeholder": string;
-        "variant": string;
-    }
     interface MyComponent {
         /**
           * The first name
@@ -36,6 +27,20 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface TextfieldGamefinder {
+        "color": string;
+        "disabled": boolean;
+        "helptext": string;
+        "icon": string;
+        "label": string;
+        "placeholder": string;
+        "state": string;
+        "value": string;
+    }
+}
+export interface TextfieldGamefinderCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLTextfieldGamefinderElement;
 }
 declare global {
     interface HTMLButtonGamefinderElement extends Components.ButtonGamefinder, HTMLStencilElement {
@@ -44,22 +49,22 @@ declare global {
         prototype: HTMLButtonGamefinderElement;
         new (): HTMLButtonGamefinderElement;
     };
-    interface HTMLInputGamefinderElement extends Components.InputGamefinder, HTMLStencilElement {
-    }
-    var HTMLInputGamefinderElement: {
-        prototype: HTMLInputGamefinderElement;
-        new (): HTMLInputGamefinderElement;
-    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLTextfieldGamefinderElement extends Components.TextfieldGamefinder, HTMLStencilElement {
+    }
+    var HTMLTextfieldGamefinderElement: {
+        prototype: HTMLTextfieldGamefinderElement;
+        new (): HTMLTextfieldGamefinderElement;
+    };
     interface HTMLElementTagNameMap {
         "button-gamefinder": HTMLButtonGamefinderElement;
-        "input-gamefinder": HTMLInputGamefinderElement;
         "my-component": HTMLMyComponentElement;
+        "textfield-gamefinder": HTMLTextfieldGamefinderElement;
     }
 }
 declare namespace LocalJSX {
@@ -68,15 +73,6 @@ declare namespace LocalJSX {
         "icon"?: string;
         "onClick"?: () => void;
         "size"?: string;
-        "variant"?: string;
-    }
-    interface InputGamefinder {
-        "color"?: string;
-        "disable"?: boolean;
-        "helpText"?: string;
-        "icon"?: string;
-        "label"?: string;
-        "placeholder"?: string;
         "variant"?: string;
     }
     interface MyComponent {
@@ -93,10 +89,21 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface TextfieldGamefinder {
+        "color"?: string;
+        "disabled"?: boolean;
+        "helptext"?: string;
+        "icon"?: string;
+        "label"?: string;
+        "onValueChange"?: (event: TextfieldGamefinderCustomEvent<any>) => void;
+        "placeholder"?: string;
+        "state"?: string;
+        "value"?: string;
+    }
     interface IntrinsicElements {
         "button-gamefinder": ButtonGamefinder;
-        "input-gamefinder": InputGamefinder;
         "my-component": MyComponent;
+        "textfield-gamefinder": TextfieldGamefinder;
     }
 }
 export { LocalJSX as JSX };
@@ -104,8 +111,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "button-gamefinder": LocalJSX.ButtonGamefinder & JSXBase.HTMLAttributes<HTMLButtonGamefinderElement>;
-            "input-gamefinder": LocalJSX.InputGamefinder & JSXBase.HTMLAttributes<HTMLInputGamefinderElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "textfield-gamefinder": LocalJSX.TextfieldGamefinder & JSXBase.HTMLAttributes<HTMLTextfieldGamefinderElement>;
         }
     }
 }
