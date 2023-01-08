@@ -14,11 +14,11 @@
  border: none;
  color: #FFFF;
 }
-.primary:active {
-    filter: drop-shadow(0px 6px 0px #2BB34F); 
-}
 .primary:hover {
     filter: drop-shadow(0px 3px 7px rgba(95, 225, 155, 0.71));
+}
+.primary:active {
+    box-shadow: 0px 6px 0px #2BB34F; 
 }
 .primary:disabled {
     opacity: 0.4;
