@@ -9,7 +9,6 @@ export namespace Components {
     interface ButtonGamefinder {
         "disabled": boolean;
         "icon": string;
-        "onClick": () => void;
         "size": string;
         "variant": string;
     }
@@ -37,6 +36,10 @@ export namespace Components {
         "state": string;
         "value": string;
     }
+}
+export interface ButtonGamefinderCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLButtonGamefinderElement;
 }
 export interface TextfieldGamefinderCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -71,7 +74,7 @@ declare namespace LocalJSX {
     interface ButtonGamefinder {
         "disabled"?: boolean;
         "icon"?: string;
-        "onClick"?: () => void;
+        "onGfClick"?: (event: ButtonGamefinderCustomEvent<boolean>) => void;
         "size"?: string;
         "variant"?: string;
     }
