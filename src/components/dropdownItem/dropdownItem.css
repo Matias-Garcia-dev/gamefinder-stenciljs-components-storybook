@@ -1,0 +1,13 @@
+.container-item {
+    list-style: none;
+    height: 47px;
+    width: 100%;
+    
+    
+}
+.text-item {
+    font-family: 'Exe';
+    font-size: 15px;
+    line-height: 19.94px;
+    color: #3D3D3D;
+}

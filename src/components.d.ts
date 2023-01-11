@@ -12,6 +12,34 @@ export namespace Components {
         "size": string;
         "variant": string;
     }
+    interface CheckboxGamefinder {
+        "color": string;
+        "variant": string;
+    }
+    interface ChipGamefinder {
+        "color": string;
+        "variant": string;
+    }
+    interface DropdownItemGamefinder {
+        "color": string;
+        "disabled": boolean;
+        "helptext": string;
+        "icon": string;
+        "label": string;
+        "placeholder": string;
+        "state": string;
+        "value": string;
+    }
+    interface DropdownListGamefinder {
+        "color": string;
+        "disabled": boolean;
+        "helptext": string;
+        "icon": string;
+        "label": string;
+        "placeholder": string;
+        "state": string;
+        "value": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -41,6 +69,22 @@ export interface ButtonGamefinderCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLButtonGamefinderElement;
 }
+export interface CheckboxGamefinderCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCheckboxGamefinderElement;
+}
+export interface ChipGamefinderCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLChipGamefinderElement;
+}
+export interface DropdownItemGamefinderCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLDropdownItemGamefinderElement;
+}
+export interface DropdownListGamefinderCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLDropdownListGamefinderElement;
+}
 export interface TextfieldGamefinderCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLTextfieldGamefinderElement;
@@ -51,6 +95,30 @@ declare global {
     var HTMLButtonGamefinderElement: {
         prototype: HTMLButtonGamefinderElement;
         new (): HTMLButtonGamefinderElement;
+    };
+    interface HTMLCheckboxGamefinderElement extends Components.CheckboxGamefinder, HTMLStencilElement {
+    }
+    var HTMLCheckboxGamefinderElement: {
+        prototype: HTMLCheckboxGamefinderElement;
+        new (): HTMLCheckboxGamefinderElement;
+    };
+    interface HTMLChipGamefinderElement extends Components.ChipGamefinder, HTMLStencilElement {
+    }
+    var HTMLChipGamefinderElement: {
+        prototype: HTMLChipGamefinderElement;
+        new (): HTMLChipGamefinderElement;
+    };
+    interface HTMLDropdownItemGamefinderElement extends Components.DropdownItemGamefinder, HTMLStencilElement {
+    }
+    var HTMLDropdownItemGamefinderElement: {
+        prototype: HTMLDropdownItemGamefinderElement;
+        new (): HTMLDropdownItemGamefinderElement;
+    };
+    interface HTMLDropdownListGamefinderElement extends Components.DropdownListGamefinder, HTMLStencilElement {
+    }
+    var HTMLDropdownListGamefinderElement: {
+        prototype: HTMLDropdownListGamefinderElement;
+        new (): HTMLDropdownListGamefinderElement;
     };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
@@ -66,6 +134,10 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "button-gamefinder": HTMLButtonGamefinderElement;
+        "checkbox-gamefinder": HTMLCheckboxGamefinderElement;
+        "chip-gamefinder": HTMLChipGamefinderElement;
+        "dropdown-item-gamefinder": HTMLDropdownItemGamefinderElement;
+        "dropdown-list-gamefinder": HTMLDropdownListGamefinderElement;
         "my-component": HTMLMyComponentElement;
         "textfield-gamefinder": HTMLTextfieldGamefinderElement;
     }
@@ -77,6 +149,40 @@ declare namespace LocalJSX {
         "onGfClick"?: (event: ButtonGamefinderCustomEvent<boolean>) => void;
         "size"?: string;
         "variant"?: string;
+    }
+    interface CheckboxGamefinder {
+        "color"?: string;
+        "onGfClick"?: (event: CheckboxGamefinderCustomEvent<boolean>) => void;
+        "variant"?: string;
+    }
+    interface ChipGamefinder {
+        "color"?: string;
+        "onGfClick"?: (event: ChipGamefinderCustomEvent<boolean>) => void;
+        "variant"?: string;
+    }
+    interface DropdownItemGamefinder {
+        "color"?: string;
+        "disabled"?: boolean;
+        "helptext"?: string;
+        "icon"?: string;
+        "label"?: string;
+        "onGfClick"?: (event: DropdownItemGamefinderCustomEvent<boolean>) => void;
+        "onValueChange"?: (event: DropdownItemGamefinderCustomEvent<any>) => void;
+        "placeholder"?: string;
+        "state"?: string;
+        "value"?: string;
+    }
+    interface DropdownListGamefinder {
+        "color"?: string;
+        "disabled"?: boolean;
+        "helptext"?: string;
+        "icon"?: string;
+        "label"?: string;
+        "onGfClick"?: (event: DropdownListGamefinderCustomEvent<boolean>) => void;
+        "onValueChange"?: (event: DropdownListGamefinderCustomEvent<any>) => void;
+        "placeholder"?: string;
+        "state"?: string;
+        "value"?: string;
     }
     interface MyComponent {
         /**
@@ -105,6 +211,10 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "button-gamefinder": ButtonGamefinder;
+        "checkbox-gamefinder": CheckboxGamefinder;
+        "chip-gamefinder": ChipGamefinder;
+        "dropdown-item-gamefinder": DropdownItemGamefinder;
+        "dropdown-list-gamefinder": DropdownListGamefinder;
         "my-component": MyComponent;
         "textfield-gamefinder": TextfieldGamefinder;
     }
@@ -114,6 +224,10 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "button-gamefinder": LocalJSX.ButtonGamefinder & JSXBase.HTMLAttributes<HTMLButtonGamefinderElement>;
+            "checkbox-gamefinder": LocalJSX.CheckboxGamefinder & JSXBase.HTMLAttributes<HTMLCheckboxGamefinderElement>;
+            "chip-gamefinder": LocalJSX.ChipGamefinder & JSXBase.HTMLAttributes<HTMLChipGamefinderElement>;
+            "dropdown-item-gamefinder": LocalJSX.DropdownItemGamefinder & JSXBase.HTMLAttributes<HTMLDropdownItemGamefinderElement>;
+            "dropdown-list-gamefinder": LocalJSX.DropdownListGamefinder & JSXBase.HTMLAttributes<HTMLDropdownListGamefinderElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "textfield-gamefinder": LocalJSX.TextfieldGamefinder & JSXBase.HTMLAttributes<HTMLTextfieldGamefinderElement>;
         }

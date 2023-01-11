@@ -1,0 +1,32 @@
+.container {
+    width: 125px;
+    height: 28px;
+    border-radius: 62px;
+    background: #36B972; 
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.light {
+    background: #FFFFFF; 
+}
+.green {
+    background: #36B972; 
+}
+
+.dark {
+    background: #515151;
+}
+
+.text {
+    font-family: 'Exo';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 21px;
+display: flex;
+align-items: center;
+text-align: center;
+}
