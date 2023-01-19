@@ -1,4 +1,4 @@
-import { Component, Prop, h, EventEmitter, Event } from '@stencil/core';
+import { Component, h, EventEmitter, Event } from '@stencil/core';
 
 @Component({
   tag: 'checkbox-gamefinder',
@@ -6,11 +6,7 @@ import { Component, Prop, h, EventEmitter, Event } from '@stencil/core';
   shadow: true,
 })
 export class input {
-  @Prop() variant: string = 'light';  
-  @Prop() color: string;
   @Event()gfClick: EventEmitter<boolean>;
-  
-
   handleClick() {
     this.gfClick.emit(true)
 }
@@ -20,7 +16,7 @@ export class input {
   render() {
 
     return(
-        <input type='checkbox' class='checkbox'></input>
+        <input type='checkbox' onClick={this.handleClick}></input>
         )
   }
 }
